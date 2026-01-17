@@ -1,0 +1,77 @@
+@model IEnumerable<AppointmentListItemViewModel>
+@{
+    ViewData["Title"] = "Appointments";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">Appointments</h3>
+    <a class="btn btn-primary" asp-action="Create">Create Appointment (Staff Only)</a>
+</div>
+
+<div class="card shadow-sm border-0 mb-3">
+    <div class="card-body">
+        <form asp-action="Index" method="get" class="row g-2">
+            <div class="col-md-10">
+                <input type="text" name="searchTerm" class="form-control" placeholder="Search by patient, doctor, or reason..." value="@ViewBag.SearchTerm" />
+            </div>
+            <div class="col-md-2">
+                <button type="submit" class="btn btn-outline-primary w-100">Search</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover mb-0 align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Date &amp; Time</th>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Reason</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var a in Model)
+                {
+                    <tr>
+                        <td>@a.Date.ToString("dd MMM yyyy, HH:mm")</td>
+                        <td>@a.PatientName</td>
+                        <td>@a.DoctorName</td>
+                        <td>@a.Reason</td>
+                        <td>
+                            @{
+                                var statusClass = a.Status switch
+                                {
+                                    AppointmentStatus.Approved => "bg-success",
+                                    AppointmentStatus.Cancelled => "bg-secondary",
+                                    _ => "bg-warning"
+                                };
+                            }
+                            <span class="badge @statusClass">@a.Status</span>
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@a.Id" class="btn btn-sm btn-outline-primary">Edit</a>
+                            @if (User.IsInRole("Administrator") || User.IsInRole("Manager"))
+                            {
+                                <form asp-action="Delete" asp-route-id="@a.Id" method="post" class="d-inline" onsubmit="return confirm('Are you sure you want to delete this appointment?');">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger">Delete</button>
+                                </form>
+                            }
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+

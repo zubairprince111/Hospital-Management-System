@@ -1,0 +1,59 @@
+@model Appointment
+@{
+    ViewData["Title"] = "Edit Appointment";
+}
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white">
+        <h4 class="mb-0">Edit Appointment</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit" method="post" class="row g-3">
+            <input type="hidden" asp-for="Id" />
+            <div class="col-md-6">
+                <label asp-for="PatientId" class="form-label">Patient</label>
+                <select asp-for="PatientId" class="form-select">
+                    @foreach (var patient in (ViewBag.Patients as List<Patient>) ?? new List<Patient>())
+                    {
+                        <option value="@patient.Id">@patient.FullName</option>
+                    }
+                </select>
+                <span asp-validation-for="PatientId" class="text-danger small"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="DoctorId" class="form-label">Doctor</label>
+                <select asp-for="DoctorId" class="form-select">
+                    @foreach (var doctor in (ViewBag.Doctors as List<Doctor>) ?? new List<Doctor>())
+                    {
+                        <option value="@doctor.Id">@doctor.FullName - @doctor.Specialty</option>
+                    }
+                </select>
+                <span asp-validation-for="DoctorId" class="text-danger small"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Date" class="form-label">Date & Time</label>
+                <input asp-for="Date" class="form-control" type="datetime-local" />
+                <span asp-validation-for="Date" class="text-danger small"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="Status" class="form-label">Status</label>
+                <select asp-for="Status" class="form-select" asp-items="Html.GetEnumSelectList<AppointmentStatus>()"></select>
+                <span asp-validation-for="Status" class="text-danger small"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="Reason" class="form-label">Reason</label>
+                <textarea asp-for="Reason" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Reason" class="text-danger small"></span>
+            </div>
+            <div class="col-12 d-flex justify-content-between mt-3">
+                <a asp-action="Index" class="btn btn-outline-secondary">Back to list</a>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

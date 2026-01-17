@@ -1,0 +1,60 @@
+F:\pora\c# project\HospitalManagementSystem\bin\Debug\net10.0\HospitalManagementSystem.staticwebassets.endpoints.json
+F:\pora\c# project\HospitalManagementSystem\bin\Debug\net10.0\HospitalManagementSystem.exe
+F:\pora\c# project\HospitalManagementSystem\bin\Debug\net10.0\HospitalManagementSystem.deps.json
+F:\pora\c# project\HospitalManagementSystem\bin\Debug\net10.0\HospitalManagementSystem.runtimeconfig.json
+F:\pora\c# project\HospitalManagementSystem\bin\Debug\net10.0\HospitalManagementSystem.dll
+F:\pora\c# project\HospitalManagementSystem\bin\Debug\net10.0\HospitalManagementSystem.pdb
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\rpswa.dswa.cache.json
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.AssemblyInfoInputs.cache
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.AssemblyInfo.cs
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.csproj.CoreCompileInputs.cache
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.MvcApplicationPartsAssemblyInfo.cache
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\rjimswa.dswa.cache.json
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\scopedcss\bundle\HospitalManagementSystem.styles.css
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\staticwebassets.build.json
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\staticwebassets.build.json.cache
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\staticwebassets.development.json
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\swae.build.ex.cache
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.dll
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\refint\HospitalManagementSystem.dll
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.pdb
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.genruntimeconfig.cache
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\ref\HospitalManagementSystem.dll
+F:\pora\c# project\HospitalManagementSystem\bin\Debug\net10.0\HospitalManagementSystem.staticwebassets.runtime.json
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.RazorAssemblyInfo.cache
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\HospitalManagementSystem.RazorAssemblyInfo.cs
+F:\pora\c# project\HospitalManagementSystem\obj\Debug\net10.0\compressed\gphrepcks2-{0}-g1sqtceztg-g1sqtceztg.gz
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.AssemblyInfoInputs.cache
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.AssemblyInfo.cs
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.csproj.CoreCompileInputs.cache
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.RazorAssemblyInfo.cache
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.RazorAssemblyInfo.cs
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.dll
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\refint\HospitalManagementSystem.dll
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.pdb
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\bin\Debug\net10.0\HospitalManagementSystem.staticwebassets.runtime.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\bin\Debug\net10.0\HospitalManagementSystem.staticwebassets.endpoints.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\bin\Debug\net10.0\HospitalManagementSystem.exe
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\bin\Debug\net10.0\HospitalManagementSystem.deps.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\bin\Debug\net10.0\HospitalManagementSystem.runtimeconfig.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\bin\Debug\net10.0\HospitalManagementSystem.dll
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\bin\Debug\net10.0\HospitalManagementSystem.pdb
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\scopedcss\bundle\HospitalManagementSystem.styles.css
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\compressed\gphrepcks2-{0}-g1sqtceztg-g1sqtceztg.gz
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\HospitalManagementSystem.genruntimeconfig.cache
+C:\Users\user\Downloads\HospitalManagementSystem-main\HospitalManagementSystem-main\obj\Debug\net10.0\ref\HospitalManagementSystem.dll

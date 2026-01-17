@@ -1,0 +1,126 @@
+@model DashboardViewModel
+@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">Admin Dashboard</h3>
+    <div class="d-flex gap-2">
+        <a class="btn btn-success btn-sm" asp-controller="PatientPortal" asp-action="BookAppointment">
+            📅 Book Appointment (Public)
+        </a>
+        <form asp-action="Logout" method="post" class="mb-0">
+            <button type="submit" class="btn btn-outline-danger btn-sm">Logout</button>
+        </form>
+    </div>
+</div>
+
+@{
+    var patients = ViewBag.Patients as Dictionary<int, string> ?? new Dictionary<int, string>();
+    var doctors = ViewBag.Doctors as Dictionary<int, string> ?? new Dictionary<int, string>();
+    var pendingCount = ViewBag.PendingAppointmentsCount as int? ?? 0;
+}
+
+<div class="row g-3 mb-4">
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 stat-card">
+            <div class="card-body">
+                <h6 class="text-muted text-uppercase mb-2 small">Total Patients</h6>
+                <h2 class="fw-bold">@Model.TotalPatients</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 stat-card">
+            <div class="card-body">
+                <h6 class="text-muted text-uppercase mb-2 small">Total Doctors</h6>
+                <h2 class="fw-bold">@Model.TotalDoctors</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 stat-card">
+            <div class="card-body">
+                <h6 class="text-muted text-uppercase mb-2 small">Total Appointments</h6>
+                <h2 class="fw-bold">@Model.TotalAppointments</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0 stat-card @(pendingCount > 0 ? "border-warning" : "")">
+            <div class="card-body">
+                <h6 class="text-muted text-uppercase mb-2 small">Pending Approval</h6>
+                <h2 class="fw-bold @(pendingCount > 0 ? "text-warning" : "")">@pendingCount</h2>
+                @if (pendingCount > 0)
+                {
+                    <small class="text-muted">New patient bookings</small>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white d-flex justify-content-between align-items-center">
+        <h5 class="mb-0">Upcoming Appointments</h5>
+        <div class="d-flex gap-2">
+            <a class="btn btn-sm btn-success" asp-controller="PatientPortal" asp-action="BookAppointment">
+                📅 Book Appointment
+            </a>
+            <a class="btn btn-sm btn-primary" asp-controller="Appointments" asp-action="Index">Manage appointments</a>
+        </div>
+    </div>
+    <div class="card-body p-0">
+        @if (Model.UpcomingAppointments.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="table-light">
+                    <tr>
+                        <th>Date &amp; Time</th>
+                        <th>Patient</th>
+                        <th>Doctor</th>
+                        <th>Status &amp; Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var a in Model.UpcomingAppointments)
+                    {
+                        var patientName = patients.TryGetValue(a.PatientId, out var pName) ? pName : $"Patient #{a.PatientId}";
+                        var doctorName = doctors.TryGetValue(a.DoctorId, out var dName) ? dName : $"Doctor #{a.DoctorId}";
+                        var statusClass = a.Status switch
+                        {
+                            AppointmentStatus.Approved => "bg-success",
+                            AppointmentStatus.Cancelled => "bg-secondary",
+                            _ => "bg-warning"
+                        };
+                        <tr>
+                            <td>@a.Date.ToString("dd MMM yyyy, HH:mm")</td>
+                            <td>@patientName</td>
+                            <td>@doctorName</td>
+                            <td>
+                                <span class="badge @statusClass">@a.Status</span>
+                                @if (a.Status == AppointmentStatus.Pending)
+                                {
+                                    <a asp-controller="Appointments" asp-action="Edit" asp-route-id="@a.Id" class="btn btn-sm btn-outline-primary ms-2">Review</a>
+                                }
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <div class="p-3 text-muted small">
+                No upcoming appointments.
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+
