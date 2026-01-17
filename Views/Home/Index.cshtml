@@ -1,0 +1,86 @@
+@{
+    ViewData["Title"] = "Home";
+    Layout = "_PublicLayout";
+    var doctors = ViewBag.Doctors as List<Doctor> ?? new List<Doctor>();
+}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-lg-10">
+        <!-- Hero Section with Booking CTA -->
+        <div class="card shadow-lg border-0 mb-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+            <div class="card-body text-white text-center p-5">
+                <h1 class="display-3 fw-bold mb-3">Book Your Appointment Online</h1>
+                <p class="lead mb-4">Schedule your visit with our experienced doctors. Quick, easy, and available 24/7.</p>
+                <a asp-controller="PatientPortal" asp-action="BookAppointment" class="btn btn-light btn-lg px-5 py-3">
+                    <span style="font-size: 1.5rem; margin-right: 10px;">📅</span>
+                    Book Appointment Now
+                </a>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100 text-center">
+                    <div class="card-body p-4">
+                        <div class="mb-3" style="font-size: 3rem;">⚡</div>
+                        <h5 class="card-title">Quick Booking</h5>
+                        <p class="card-text text-muted small">Book your appointment in minutes with our simple online form.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100 text-center">
+                    <div class="card-body p-4">
+                        <div class="mb-3" style="font-size: 3rem;">✅</div>
+                        <h5 class="card-title">Instant Confirmation</h5>
+                        <p class="card-text text-muted small">Receive immediate confirmation after booking your appointment.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm border-0 h-100 text-center">
+                    <div class="card-body p-4">
+                        <div class="mb-3" style="font-size: 3rem;">🩺</div>
+                        <h5 class="card-title">Expert Doctors</h5>
+                        <p class="card-text text-muted small">Choose from our team of experienced and qualified doctors.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mb-4">
+            <p class="text-muted">Are you a staff member?</p>
+            <a asp-controller="Admin" asp-action="Login" class="btn btn-outline-primary">Staff Login</a>
+        </div>
+
+        @if (doctors.Any())
+        {
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-white">
+                    <h4 class="mb-0">Our Doctors</h4>
+                </div>
+                <div class="card-body">
+                    <div class="row g-3">
+                        @foreach (var doctor in doctors)
+                        {
+                            <div class="col-md-6">
+                                <div class="d-flex align-items-center p-3 border rounded">
+                                    <div class="me-3" style="font-size: 2rem;">🩺</div>
+                                    <div>
+                                        <h5 class="mb-1">@doctor.FullName</h5>
+                                        <p class="text-muted mb-0 small">@doctor.Specialty</p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+

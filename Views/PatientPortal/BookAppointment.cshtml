@@ -1,0 +1,84 @@
+@model PatientPortalAppointmentViewModel
+@{
+    ViewData["Title"] = "Book Appointment";
+    Layout = "_PublicLayout";
+    var doctors = ViewBag.Doctors as List<Doctor> ?? new List<Doctor>();
+}
+
+<div class="row justify-content-center mt-4">
+    <div class="col-lg-8 col-md-10">
+        <div class="card shadow-sm border-0">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">Book an Appointment</h4>
+            </div>
+            <div class="card-body">
+                <form asp-action="BookAppointment" method="post" class="row g-3">
+                    <div asp-validation-summary="All" class="text-danger small mb-2"></div>
+                    <div class="col-md-6">
+                        <label asp-for="FullName" class="form-label"></label>
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <label asp-for="Age" class="form-label"></label>
+                        <input asp-for="Age" class="form-control" type="number" />
+                        <span asp-validation-for="Age" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-3">
+                        <label asp-for="Gender" class="form-label"></label>
+                        <select asp-for="Gender" class="form-select">
+                            <option value="">Select...</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                        <span asp-validation-for="Gender" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Phone" class="form-label"></label>
+                        <input asp-for="Phone" class="form-control" />
+                        <span asp-validation-for="Phone" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Address" class="form-label"></label>
+                        <input asp-for="Address" class="form-control" />
+                        <span asp-validation-for="Address" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="DoctorId" class="form-label"></label>
+                        <select asp-for="DoctorId" class="form-select">
+                            <option value="">Select doctor...</option>
+                            @foreach (var d in doctors)
+                            {
+                                <option value="@d.Id">@d.FullName (@d.Specialty)</option>
+                            }
+                        </select>
+                        <span asp-validation-for="DoctorId" class="text-danger small"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Date" class="form-label"></label>
+                        <input asp-for="Date" class="form-control" type="datetime-local" />
+                        <span asp-validation-for="Date" class="text-danger small"></span>
+                    </div>
+                    <div class="col-12">
+                        <label asp-for="Reason" class="form-label"></label>
+                        <textarea asp-for="Reason" rows="3" class="form-control"></textarea>
+                        <span asp-validation-for="Reason" class="text-danger small"></span>
+                    </div>
+                    <div class="col-12 d-flex justify-content-end mt-3">
+                        <button type="submit" class="btn btn-primary px-4">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+

@@ -1,0 +1,40 @@
+@model IEnumerable<Report>
+@{
+    ViewData["Title"] = "Reports";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h3 class="mb-0">Reports</h3>
+    <a class="btn btn-primary" asp-action="Generate">Generate Report</a>
+</div>
+
+<div class="card shadow-sm border-0">
+    <div class="card-body p-0">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover mb-0 align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>Title</th>
+                        <th>Type</th>
+                        <th>Generated At</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                @foreach (var r in Model)
+                {
+                    <tr>
+                        <td>@r.Title</td>
+                        <td><span class="badge bg-info">@r.ReportType</span></td>
+                        <td>@r.GeneratedAt.ToString("yyyy-MM-dd HH:mm")</td>
+                        <td>
+                            <a asp-action="ViewReport" asp-route-id="@r.Id" class="btn btn-sm btn-outline-primary">View</a>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,55 @@
+@model HospitalManagementSystem.Models.Task
+@{
+    ViewData["Title"] = "Create Task";
+    var users = ViewBag.Users as List<User> ?? new List<User>();
+}
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white">
+        <h4 class="mb-0">Create Task</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Create" method="post" class="row g-3">
+            <div class="col-12">
+                <label asp-for="Title" class="form-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger small"></span>
+            </div>
+            <div class="col-12">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                <span asp-validation-for="Description" class="text-danger small"></span>
+            </div>
+            <div class="col-md-6">
+                <label asp-for="AssignedToUserId" class="form-label">Assign To</label>
+                <select asp-for="AssignedToUserId" class="form-select">
+                    <option value="">Select user...</option>
+                    @foreach (var user in users)
+                    {
+                        <option value="@user.Id">@user.FullName (@user.Role)</option>
+                    }
+                </select>
+                <span asp-validation-for="AssignedToUserId" class="text-danger small"></span>
+            </div>
+            <div class="col-md-3">
+                <label asp-for="Priority" class="form-label"></label>
+                <select asp-for="Priority" class="form-select" asp-items="Html.GetEnumSelectList<TaskPriority>()"></select>
+                <span asp-validation-for="Priority" class="text-danger small"></span>
+            </div>
+            <div class="col-md-3">
+                <label asp-for="DueDate" class="form-label">Due Date</label>
+                <input asp-for="DueDate" class="form-control" type="datetime-local" />
+                <span asp-validation-for="DueDate" class="text-danger small"></span>
+            </div>
+            <div class="col-12 d-flex justify-content-between mt-3">
+                <a asp-action="Index" class="btn btn-outline-secondary">Back to list</a>
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

@@ -1,0 +1,23 @@
+@{
+    ViewData["Title"] = "Appointment Confirmation";
+    Layout = "_PublicLayout";
+}
+
+<div class="row justify-content-center mt-5">
+    <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center p-5">
+                <h3 class="mb-3 text-success">Appointment Submitted</h3>
+                <p class="mb-3">
+                    @TempData["SuccessMessage"] ?? "Your appointment has been submitted successfully and is pending approval by the hospital staff."
+                </p>
+                <a asp-action="BookAppointment" class="btn btn-outline-primary mt-2">Book another appointment</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

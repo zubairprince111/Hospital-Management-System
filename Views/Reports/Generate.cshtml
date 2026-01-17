@@ -1,0 +1,42 @@
+@model ReportViewModel
+@{
+    ViewData["Title"] = "Generate Report";
+}
+
+<div class="card shadow-sm border-0">
+    <div class="card-header bg-white">
+        <h4 class="mb-0">Generate Report</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Generate" method="post" class="row g-3">
+            <div class="col-md-6">
+                <label asp-for="ReportType" class="form-label">Report Type</label>
+                <select asp-for="ReportType" class="form-select" required>
+                    <option value="">Select report type...</option>
+                    <option value="Appointments">Appointments</option>
+                    <option value="Patients">Patients</option>
+                    <option value="Tasks">Tasks</option>
+                    <option value="Users">Users</option>
+                </select>
+                <span asp-validation-for="ReportType" class="text-danger small"></span>
+            </div>
+            <div class="col-md-3">
+                <label asp-for="StartDate" class="form-label">Start Date (Optional)</label>
+                <input asp-for="StartDate" class="form-control" type="date" />
+            </div>
+            <div class="col-md-3">
+                <label asp-for="EndDate" class="form-label">End Date (Optional)</label>
+                <input asp-for="EndDate" class="form-control" type="date" />
+            </div>
+            <div class="col-12 d-flex justify-content-between mt-3">
+                <a asp-action="Index" class="btn btn-outline-secondary">Back to list</a>
+                <button type="submit" class="btn btn-primary">Generate</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
